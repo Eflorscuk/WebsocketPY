@@ -1,0 +1,7 @@
+# Ambiente virtual
+webEnv/
+
+# Outros arquivos ou diretórios que você quer ignorar
+__pycache__/
+*.pyc
+.DS_Store
