@@ -8,7 +8,14 @@ async def echo(websocket, path):
 
 async def main():
     server = await websockets.serve(echo, "localhost", 8765)
-    print("Server started")
-    await server.wait_closed()
+    print("Servidor iniciado")
+    try:
+        await server.wait_closed()
+    except KeyboardInterrupt:
+        print("\nServidor interrompido pelo usuário")
 
-asyncio.run(main())
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\nServidor encerrado graciosamente")
